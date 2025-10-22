@@ -1,0 +1,12 @@
+# カレントのプロジェクトを 1.21 で実行
+docker run --rm -it -v "$PWD":/app -w /app golang:1.21 bash
+go version       # go1.21.x と出る
+go run main.go         # ここで挙動確認
+
+# 結果は以下になる
+############################
+# root@3897891d706c:/app# go run main.go
+# key: 3, value: &{ID:3 Balance:0}, address: 0x400000c018
+# key: 1, value: &{ID:3 Balance:0}, address: 0x400000c018
+# key: 2, value: &{ID:3 Balance:0}, address: 0x400000c018
+############################
