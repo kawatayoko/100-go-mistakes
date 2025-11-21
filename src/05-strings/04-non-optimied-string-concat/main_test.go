@@ -6,7 +6,13 @@ import (
 )
 
 var (
-	thousandBytes = []string{strings.Repeat("a", 1000)}
+	thousandBytes = func() []string {
+		ss := make([]string, 1000)
+		for i := range ss {
+			ss[i] = strings.Repeat("a", 1000)
+		}
+		return ss
+	}()
 	thousandChars = func() []string {
 		ss := make([]string, 1000)
 		for i := range ss {
